@@ -133,6 +133,7 @@ func (g *GitDriver) Clone(dir, url string) (string, error) {
 		"git",
 		"clone",
 		"--depth", "1",
+    "--filter=blob:limit=20k",
 		url,
 		rep)
 	cmd.Dir = par
